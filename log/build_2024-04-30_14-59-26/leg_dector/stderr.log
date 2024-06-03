@@ -1,0 +1,40 @@
+CMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Error at CMakeLists.txt:1 (find_package):
+  By not providing "Findrosidl_default_generators.cmake" in CMAKE_MODULE_PATH
+  this project has asked CMake to find a package configuration file provided
+  by "rosidl_default_generators", but CMake did not find one.
+
+  Could not find a package configuration file provided by
+  "rosidl_default_generators" with any of the following names:
+
+    rosidl_default_generatorsConfig.cmake
+    rosidl_default_generators-config.cmake
+
+  Add the installation prefix of "rosidl_default_generators" to
+  CMAKE_PREFIX_PATH or set "rosidl_default_generators_DIR" to a directory
+  containing one of the above files.  If "rosidl_default_generators" provides
+  a separate development package or SDK, be sure it has been installed.
+
+
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+
+    cmake_minimum_required(VERSION 3.16)
+
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+

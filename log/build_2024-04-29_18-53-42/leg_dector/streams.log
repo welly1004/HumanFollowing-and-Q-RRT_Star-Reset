@@ -1,0 +1,25 @@
+[0.445s] Invoking command in '/home/airlab/Desktop/project_ws/src/leg_dector': PYTHONPATH=/home/airlab/Desktop/project_ws/build/leg_dector/prefix_override:/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/leg_dector build --build-base /home/airlab/Desktop/project_ws/build/leg_dector/build install --record /home/airlab/Desktop/project_ws/build/leg_dector/install.log --single-version-externally-managed install_data
+[0.573s] running egg_info
+[0.581s] writing ../../build/leg_dector/leg_dector.egg-info/PKG-INFO
+[0.582s] writing dependency_links to ../../build/leg_dector/leg_dector.egg-info/dependency_links.txt
+[0.582s] writing entry points to ../../build/leg_dector/leg_dector.egg-info/entry_points.txt
+[0.582s] writing requirements to ../../build/leg_dector/leg_dector.egg-info/requires.txt
+[0.582s] writing top-level names to ../../build/leg_dector/leg_dector.egg-info/top_level.txt
+[0.599s] reading manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'
+[0.599s] writing manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'
+[0.599s] running build
+[0.599s] running build_py
+[0.599s] copying leg_dector/human_following.py -> /home/airlab/Desktop/project_ws/build/leg_dector/build/lib/leg_dector
+[0.600s] running install
+[0.600s] running install_lib
+[0.600s] copying /home/airlab/Desktop/project_ws/build/leg_dector/build/lib/leg_dector/human_following.py -> /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector
+[0.601s] byte-compiling /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector/human_following.py to human_following.cpython-38.pyc
+[0.602s] running install_data
+[0.602s] running install_egg_info
+[0.603s] removing '/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info' (and everything under it)
+[0.618s] Copying ../../build/leg_dector/leg_dector.egg-info to /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info
+[0.618s] running install_scripts
+[0.626s] Installing human_following script to /home/airlab/Desktop/project_ws/install/leg_dector/lib/leg_dector
+[0.627s] Installing leg_detection script to /home/airlab/Desktop/project_ws/install/leg_dector/lib/leg_dector
+[0.627s] writing list of installed files to '/home/airlab/Desktop/project_ws/build/leg_dector/install.log'
+[0.641s] Invoked command in '/home/airlab/Desktop/project_ws/src/leg_dector' returned '0': PYTHONPATH=/home/airlab/Desktop/project_ws/build/leg_dector/prefix_override:/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/leg_dector build --build-base /home/airlab/Desktop/project_ws/build/leg_dector/build install --record /home/airlab/Desktop/project_ws/build/leg_dector/install.log --single-version-externally-managed install_data

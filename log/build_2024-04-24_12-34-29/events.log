@@ -1,0 +1,35 @@
+[0.000000] (-) TimerEvent: {}
+[0.003775] (leg_dector) JobQueued: {'identifier': 'leg_dector', 'dependencies': OrderedDict()}
+[0.004098] (leg_dector) JobStarted: {'identifier': 'leg_dector'}
+[0.100071] (-) TimerEvent: {}
+[0.211939] (-) TimerEvent: {}
+[0.314410] (-) TimerEvent: {}
+[0.415061] (-) TimerEvent: {}
+[0.464684] (leg_dector) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/leg_dector', 'build', '--build-base', '/home/airlab/Desktop/project_ws/build/leg_dector/build', 'install', '--record', '/home/airlab/Desktop/project_ws/build/leg_dector/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/airlab/Desktop/project_ws/src/leg_dector', 'env': {'SUDO_GID': '1000', 'MAIL': '/var/mail/root', 'LC_TIME': 'lzh_TW', 'USER': 'root', 'HOME': '/root', 'LC_MONETARY': 'lzh_TW', 'COLORTERM': 'truecolor', 'SUDO_UID': '1000', 'LOGNAME': 'root', 'TERM': 'xterm-256color', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin', 'LC_ADDRESS': 'lzh_TW', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'lzh_TW', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'SUDO_COMMAND': '/usr/bin/colcon build', 'LC_NAME': 'lzh_TW', 'SHELL': '/bin/bash', 'SUDO_USER': 'airlab', 'LC_MEASUREMENT': 'lzh_TW', 'LC_IDENTIFICATION': 'lzh_TW', 'LC_ALL': 'en_US.UTF-8', 'PWD': '/home/airlab/Desktop/project_ws/build/leg_dector', 'LC_NUMERIC': 'lzh_TW', 'LC_PAPER': 'lzh_TW', 'COLCON': '1', 'PYTHONPATH': '/home/airlab/Desktop/project_ws/build/leg_dector/prefix_override:/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages:'}, 'shell': False}
+[0.516358] (-) TimerEvent: {}
+[0.595326] (leg_dector) StdoutLine: {'line': b'running egg_info\n'}
+[0.595890] (leg_dector) StdoutLine: {'line': b'writing ../../build/leg_dector/leg_dector.egg-info/PKG-INFO\n'}
+[0.596312] (leg_dector) StdoutLine: {'line': b'writing dependency_links to ../../build/leg_dector/leg_dector.egg-info/dependency_links.txt\n'}
+[0.596628] (leg_dector) StdoutLine: {'line': b'writing entry points to ../../build/leg_dector/leg_dector.egg-info/entry_points.txt\n'}
+[0.596923] (leg_dector) StdoutLine: {'line': b'writing requirements to ../../build/leg_dector/leg_dector.egg-info/requires.txt\n'}
+[0.597277] (leg_dector) StdoutLine: {'line': b'writing top-level names to ../../build/leg_dector/leg_dector.egg-info/top_level.txt\n'}
+[0.617276] (-) TimerEvent: {}
+[0.620391] (leg_dector) StdoutLine: {'line': b"reading manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'\n"}
+[0.621409] (leg_dector) StdoutLine: {'line': b"writing manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'\n"}
+[0.621698] (leg_dector) StdoutLine: {'line': b'running build\n'}
+[0.621822] (leg_dector) StdoutLine: {'line': b'running build_py\n'}
+[0.622034] (leg_dector) StdoutLine: {'line': b'copying leg_dector/leg_detection.py -> /home/airlab/Desktop/project_ws/build/leg_dector/build/lib/leg_dector\n'}
+[0.623249] (leg_dector) StdoutLine: {'line': b'running install\n'}
+[0.623855] (leg_dector) StdoutLine: {'line': b'running install_lib\n'}
+[0.624547] (leg_dector) StdoutLine: {'line': b'copying /home/airlab/Desktop/project_ws/build/leg_dector/build/lib/leg_dector/leg_detection.py -> /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector\n'}
+[0.625262] (leg_dector) StdoutLine: {'line': b'byte-compiling /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector/leg_detection.py to leg_detection.cpython-38.pyc\n'}
+[0.626983] (leg_dector) StdoutLine: {'line': b'running install_data\n'}
+[0.627194] (leg_dector) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.628199] (leg_dector) StdoutLine: {'line': b"removing '/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[0.643750] (leg_dector) StdoutLine: {'line': b'Copying ../../build/leg_dector/leg_dector.egg-info to /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info\n'}
+[0.643883] (leg_dector) StdoutLine: {'line': b'running install_scripts\n'}
+[0.652115] (leg_dector) StdoutLine: {'line': b'Installing leg_detection script to /home/airlab/Desktop/project_ws/install/leg_dector/lib/leg_dector\n'}
+[0.652657] (leg_dector) StdoutLine: {'line': b"writing list of installed files to '/home/airlab/Desktop/project_ws/build/leg_dector/install.log'\n"}
+[0.666244] (leg_dector) CommandEnded: {'returncode': 0}
+[0.679964] (leg_dector) JobEnded: {'identifier': 'leg_dector', 'rc': 0}
+[0.680436] (-) EventReactorShutdown: {}

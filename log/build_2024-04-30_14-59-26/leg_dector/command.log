@@ -1,0 +1,2 @@
+Invoking command in '/home/airlab/Desktop/project_ws/build/leg_dector': /usr/bin/cmake /home/airlab/Desktop/project_ws/src/leg_dector -DCMAKE_INSTALL_PREFIX=/home/airlab/Desktop/project_ws/install/leg_dector
+Invoked command in '/home/airlab/Desktop/project_ws/build/leg_dector' returned '1': /usr/bin/cmake /home/airlab/Desktop/project_ws/src/leg_dector -DCMAKE_INSTALL_PREFIX=/home/airlab/Desktop/project_ws/install/leg_dector

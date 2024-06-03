@@ -1,0 +1,5 @@
+  File "/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector/leg_detection.py", line 36
+    self.clear_arrows(msg.header.frame_id)s
+                                          ^
+SyntaxError: invalid syntax
+

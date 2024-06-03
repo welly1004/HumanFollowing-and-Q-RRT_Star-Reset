@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/leg_dector/leg_dector.egg-info/PKG-INFO
+writing dependency_links to ../../build/leg_dector/leg_dector.egg-info/dependency_links.txt
+writing entry points to ../../build/leg_dector/leg_dector.egg-info/entry_points.txt
+writing requirements to ../../build/leg_dector/leg_dector.egg-info/requires.txt
+writing top-level names to ../../build/leg_dector/leg_dector.egg-info/top_level.txt
+reading manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'
+writing manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'
+running build
+running build_py
+copying leg_dector/leg_detection.py -> /home/airlab/Desktop/project_ws/build/leg_dector/build/lib/leg_dector
+running install
+running install_lib
+copying /home/airlab/Desktop/project_ws/build/leg_dector/build/lib/leg_dector/leg_detection.py -> /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector
+byte-compiling /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector/leg_detection.py to leg_detection.cpython-38.pyc
+Sorry: IndentationError: expected an indented block (leg_detection.py, line 78)
+running install_data
+running install_egg_info
+removing '/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/leg_dector/leg_dector.egg-info to /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info
+running install_scripts
+Installing leg_detection script to /home/airlab/Desktop/project_ws/install/leg_dector/lib/leg_dector
+writing list of installed files to '/home/airlab/Desktop/project_ws/build/leg_dector/install.log'

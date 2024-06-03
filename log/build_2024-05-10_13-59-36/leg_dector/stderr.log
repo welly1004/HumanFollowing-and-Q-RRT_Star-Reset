@@ -1,0 +1,5 @@
+  File "/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg_dector/human_following.py", line 45
+    if magnitude_a !=0 and magnitude_b !=0
+                                         ^
+SyntaxError: invalid syntax
+

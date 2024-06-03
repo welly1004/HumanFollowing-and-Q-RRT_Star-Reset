@@ -1,0 +1,4 @@
+[console_scripts]
+human_following = leg_dector.human_following:main
+leg_detection = leg_dector.leg_detection:main
+

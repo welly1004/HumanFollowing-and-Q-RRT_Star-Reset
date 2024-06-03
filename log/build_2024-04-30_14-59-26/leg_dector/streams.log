@@ -1,0 +1,58 @@
+[0.008s] Invoking command in '/home/airlab/Desktop/project_ws/build/leg_dector': /usr/bin/cmake /home/airlab/Desktop/project_ws/src/leg_dector -DCMAKE_INSTALL_PREFIX=/home/airlab/Desktop/project_ws/install/leg_dector
+[0.046s] CMake Warning (dev) in CMakeLists.txt:
+[0.046s]   No project() command is present.  The top-level CMakeLists.txt file must
+[0.046s]   contain a literal, direct call to the project() command.  Add a line of
+[0.046s]   code such as
+[0.046s] 
+[0.046s]     project(ProjectName)
+[0.046s] 
+[0.046s]   near the top of the file, but after cmake_minimum_required().
+[0.046s] 
+[0.046s]   CMake is pretending there is a "project(Project)" command on the first
+[0.046s]   line.
+[0.046s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.047s] 
+[0.285s] -- The C compiler identification is GNU 9.4.0
+[0.453s] -- The CXX compiler identification is GNU 9.4.0
+[0.465s] -- Check for working C compiler: /usr/bin/cc
+[0.540s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.542s] -- Detecting C compiler ABI info
+[0.625s] -- Detecting C compiler ABI info - done
+[0.632s] -- Detecting C compile features
+[0.632s] -- Detecting C compile features - done
+[0.636s] -- Check for working CXX compiler: /usr/bin/c++
+[0.722s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.723s] -- Detecting CXX compiler ABI info
+[0.805s] -- Detecting CXX compiler ABI info - done
+[0.820s] -- Detecting CXX compile features
+[0.821s] -- Detecting CXX compile features - done
+[0.833s] CMake Error at CMakeLists.txt:1 (find_package):
+[0.833s]   By not providing "Findrosidl_default_generators.cmake" in CMAKE_MODULE_PATH
+[0.833s]   this project has asked CMake to find a package configuration file provided
+[0.833s]   by "rosidl_default_generators", but CMake did not find one.
+[0.833s] 
+[0.833s]   Could not find a package configuration file provided by
+[0.833s]   "rosidl_default_generators" with any of the following names:
+[0.833s] 
+[0.833s]     rosidl_default_generatorsConfig.cmake
+[0.833s]     rosidl_default_generators-config.cmake
+[0.833s] 
+[0.833s]   Add the installation prefix of "rosidl_default_generators" to
+[0.833s]   CMAKE_PREFIX_PATH or set "rosidl_default_generators_DIR" to a directory
+[0.833s]   containing one of the above files.  If "rosidl_default_generators" provides
+[0.833s]   a separate development package or SDK, be sure it has been installed.
+[0.833s] 
+[0.833s] 
+[0.833s] CMake Warning (dev) in CMakeLists.txt:
+[0.834s]   No cmake_minimum_required command is present.  A line of code such as
+[0.834s] 
+[0.834s]     cmake_minimum_required(VERSION 3.16)
+[0.834s] 
+[0.834s]   should be added at the top of the file.  The version specified may be lower
+[0.834s]   if you wish to support older CMake versions for this project.  For more
+[0.834s]   information run "cmake --help-policy CMP0000".
+[0.834s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.834s] 
+[0.834s] -- Configuring incomplete, errors occurred!
+[0.834s] See also "/home/airlab/Desktop/project_ws/build/leg_dector/CMakeFiles/CMakeOutput.log".
+[0.837s] Invoked command in '/home/airlab/Desktop/project_ws/build/leg_dector' returned '1': /usr/bin/cmake /home/airlab/Desktop/project_ws/src/leg_dector -DCMAKE_INSTALL_PREFIX=/home/airlab/Desktop/project_ws/install/leg_dector

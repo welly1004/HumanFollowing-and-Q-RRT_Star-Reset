@@ -1,0 +1,21 @@
+[0.519s] Invoking command in '/home/airlab/Desktop/project_ws/build/leg_dector': PYTHONPATH=/home/airlab/Desktop/project_ws/build/leg_dector/prefix_override:/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/airlab/Desktop/project_ws/build/leg_dector/build --no-deps symlink_data --force
+[0.681s] running develop
+[0.770s] running egg_info
+[0.770s] writing leg_dector.egg-info/PKG-INFO
+[0.770s] writing dependency_links to leg_dector.egg-info/dependency_links.txt
+[0.770s] writing entry points to leg_dector.egg-info/entry_points.txt
+[0.770s] writing requirements to leg_dector.egg-info/requires.txt
+[0.770s] writing top-level names to leg_dector.egg-info/top_level.txt
+[0.796s] reading manifest file 'leg_dector.egg-info/SOURCES.txt'
+[0.797s] writing manifest file 'leg_dector.egg-info/SOURCES.txt'
+[0.822s] running build_ext
+[0.823s] Creating /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/site.py
+[0.824s] Creating /home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages/leg-dector.egg-link (link to .)
+[0.825s] Installing human_following script to /home/airlab/Desktop/project_ws/install/leg_dector/lib/leg_dector
+[0.826s] Installing leg_detection script to /home/airlab/Desktop/project_ws/install/leg_dector/lib/leg_dector
+[0.826s] 
+[0.826s] Installed /home/airlab/Desktop/project_ws/build/leg_dector
+[0.826s] running symlink_data
+[0.826s] symbolically linking /home/airlab/Desktop/project_ws/build/leg_dector/resource/leg_dector -> /home/airlab/Desktop/project_ws/install/leg_dector/share/ament_index/resource_index/packages
+[0.827s] symbolically linking /home/airlab/Desktop/project_ws/build/leg_dector/package.xml -> /home/airlab/Desktop/project_ws/install/leg_dector/share/leg_dector
+[0.846s] Invoked command in '/home/airlab/Desktop/project_ws/build/leg_dector' returned '0': PYTHONPATH=/home/airlab/Desktop/project_ws/build/leg_dector/prefix_override:/home/airlab/Desktop/project_ws/install/leg_dector/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/airlab/Desktop/project_ws/build/leg_dector/build --no-deps symlink_data --force
