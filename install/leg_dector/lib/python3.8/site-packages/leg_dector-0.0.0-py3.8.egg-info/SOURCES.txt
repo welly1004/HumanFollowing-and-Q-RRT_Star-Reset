@@ -9,6 +9,7 @@ setup.py
 ../../build/leg_dector/leg_dector.egg-info/top_level.txt
 ../../build/leg_dector/leg_dector.egg-info/zip-safe
 leg_dector/__init__.py
+leg_dector/go_back.py
 leg_dector/human_following.py
 leg_dector/leg_detection.py
 resource/leg_dector

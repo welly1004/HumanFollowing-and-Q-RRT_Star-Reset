@@ -1,0 +1,31 @@
+[1.336s] Invoking command in '/home/airlab/Downloads/LiDAR_HumanFollowing-master/src/leg_dector': PYTHONPATH=/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/prefix_override:/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/leg_dector build --build-base /home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/build install --record /home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/install.log --single-version-externally-managed install_data
+[1.715s] running egg_info
+[1.715s] writing ../../build/leg_dector/leg_dector.egg-info/PKG-INFO
+[1.716s] writing dependency_links to ../../build/leg_dector/leg_dector.egg-info/dependency_links.txt
+[1.716s] writing entry points to ../../build/leg_dector/leg_dector.egg-info/entry_points.txt
+[1.717s] writing requirements to ../../build/leg_dector/leg_dector.egg-info/requires.txt
+[1.718s] writing top-level names to ../../build/leg_dector/leg_dector.egg-info/top_level.txt
+[1.779s] reading manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'
+[1.780s] writing manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'
+[1.781s] running build
+[1.782s] running build_py
+[1.782s] copying leg_dector/go_back.py -> /home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/build/lib/leg_dector
+[1.786s] running install
+[1.786s] running install_lib
+[1.786s] copying /home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/build/lib/leg_dector/go_back.py -> /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector
+[1.787s] byte-compiling /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector/go_back.py to go_back.cpython-38.pyc
+[1.793s]   File "/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector/go_back.py", line 38
+[1.793s]     self.map_data = None
+[1.793s]     ^
+[1.793s] SyntaxError: invalid syntax
+[1.793s] 
+[1.794s] running install_data
+[1.794s] running install_egg_info
+[1.796s] removing '/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info' (and everything under it)
+[1.840s] Copying ../../build/leg_dector/leg_dector.egg-info to /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info
+[1.840s] running install_scripts
+[1.870s] Installing go_back script to /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/leg_dector
+[1.873s] Installing human_following script to /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/leg_dector
+[1.874s] Installing leg_detection script to /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/leg_dector
+[1.877s] writing list of installed files to '/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/install.log'
+[1.920s] Invoked command in '/home/airlab/Downloads/LiDAR_HumanFollowing-master/src/leg_dector' returned '0': PYTHONPATH=/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/prefix_override:/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/leg_dector build --build-base /home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/build install --record /home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/install.log --single-version-externally-managed install_data

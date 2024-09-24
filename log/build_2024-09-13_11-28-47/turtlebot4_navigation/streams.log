@@ -1,0 +1,18 @@
+[0.428s] Invoking command in '/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/turtlebot4_navigation': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/airlab/Downloads/LiDAR_HumanFollowing-master/src/turtlebot4_navigation -DCMAKE_INSTALL_PREFIX=/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/turtlebot4_navigation
+[0.519s] CMake Error: The source directory "/home/airlab/Downloads/LiDAR_HumanFollowing-master/src/turtlebot4_navigation" does not appear to contain CMakeLists.txt.
+[0.524s] Specify --help for usage, or press the help button on the CMake GUI.
+[0.529s] Invoked command in '/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/turtlebot4_navigation' returned '1': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/airlab/Downloads/LiDAR_HumanFollowing-master/src/turtlebot4_navigation -DCMAKE_INSTALL_PREFIX=/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/turtlebot4_navigation
+[0.541s] Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__
+    rc = await self.task(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__
+    return await task_method(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_cmake/build.py", line 59, in build
+    rc = await extension.build(
+  File "/usr/lib/python3/dist-packages/colcon_cmake/task/cmake/build.py", line 87, in build
+    rc = await self._reconfigure(args, env)
+  File "/usr/lib/python3/dist-packages/colcon_cmake/task/cmake/build.py", line 182, in _reconfigure
+    buildfile = get_buildfile(cmake_cache)
+  File "/usr/lib/python3/dist-packages/colcon_cmake/task/cmake/__init__.py", line 114, in get_buildfile
+    if 'Visual Studio' in generator:
+TypeError: argument of type 'NoneType' is not iterable

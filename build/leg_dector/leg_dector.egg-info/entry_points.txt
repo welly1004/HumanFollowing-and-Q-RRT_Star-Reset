@@ -1,4 +1,5 @@
 [console_scripts]
+go_back = leg_dector.go_back:main
 human_following = leg_dector.human_following:main
 leg_detection = leg_dector.leg_detection:main
 

@@ -75,7 +75,7 @@ class HumanFollowingNode(Node):
                 self.second_point = msg.points[1]
                 x = round(self.second_point.x, 2)
                 y = round(self.second_point.y, 2)
-                print("Second point coordinates (x, y):", x, y)
+                print("Target coordinates (x, y):", x, y)
                 
                 magnitude_a = math.sqrt(x ** 2 + y ** 2)
                 magnitude_b = math.sqrt(0 ** 2 + 1 ** 2)
@@ -101,8 +101,8 @@ class HumanFollowingNode(Node):
 
                     control_output_AG = self.angle_controller.update(self.angle_degrees)
 
-                    self.get_logger().info(f"Distance control output: {control_output_DS}")
-                    self.get_logger().info(f'''Angle control output: {control_output_AG}''')
+                    self.get_logger().info(f"Distance PID_Control output: {control_output_DS}")
+                    self.get_logger().info(f'''Angle PID_Control output: {control_output_AG}''')
 
 
                     twist_msg= Twist()

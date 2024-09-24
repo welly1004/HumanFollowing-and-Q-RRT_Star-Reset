@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts':[
             'leg_detection = leg_dector.leg_detection:main',
-            'human_following = leg_dector.human_following:main'
+            'human_following = leg_dector.human_following:main',
+            'go_back = leg_dector.go_back:main'
         ],
     },
 )

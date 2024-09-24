@@ -18,7 +18,8 @@
   <depend>visualization_msgs</depend>
   <depend>sklearn</depend>
   <depend>numpy</depend>
-  <depend>math</depend>			  
+  <depend>math</depend>
+  <depend>mymap</depend>			  
   <depend>sklearn_cluster</depend>
   <depend>sklearn_decomposition</depend>
   <depend>irobot_create_msgs</depend>

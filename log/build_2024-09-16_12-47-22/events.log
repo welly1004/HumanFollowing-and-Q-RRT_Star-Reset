@@ -1,0 +1,41 @@
+[0.000000] (-) TimerEvent: {}
+[0.000207] (leg_dector) JobQueued: {'identifier': 'leg_dector', 'dependencies': OrderedDict()}
+[0.000301] (leg_dector) JobStarted: {'identifier': 'leg_dector'}
+[0.093909] (-) TimerEvent: {}
+[0.194911] (-) TimerEvent: {}
+[0.300455] (-) TimerEvent: {}
+[0.400950] (-) TimerEvent: {}
+[0.501465] (-) TimerEvent: {}
+[0.603501] (-) TimerEvent: {}
+[0.705937] (leg_dector) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/leg_dector', 'build', '--build-base', '/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/build', 'install', '--record', '/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/airlab/Downloads/LiDAR_HumanFollowing-master/src/leg_dector', 'env': {'USER': 'airlab', 'LC_TIME': 'lzh_TW', 'SSH_AGENT_PID': '2570', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib', 'HOME': '/home/airlab', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'lzh_TW', 'MANAGERPID': '2250', 'DBUS_STARTER_BUS_TYPE': 'session', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=b363cf4a88bec8b61ffaab3566e67691', 'COLORTERM': 'truecolor', '_colcon_cd_root': '/opt/ros/galactic/', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/airlab/Downloads/LiDAR_HumanFollowing-master/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'airlab', 'JOURNAL_STREAM': '8:121838', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'airlab', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/galactic/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/airlab-virtual-machine:@/tmp/.ICE-unix/2712,unix/airlab-virtual-machine:/tmp/.ICE-unix/2712', 'INVOCATION_ID': '15d4a9113e8c4b719a0672386e336d8d', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'lzh_TW', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/1d9a1aab_a6e9_41bc_9a27_2dd177f1fa5e', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'lzh_TW', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'GNOME_TERMINAL_SERVICE': ':1.69', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '87', 'AMENT_PREFIX_PATH': '/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector:/opt/ros/galactic', 'SHELL': '/bin/bash', 'LC_NAME': 'lzh_TW', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LC_MEASUREMENT': 'lzh_TW', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'lzh_TW', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=b363cf4a88bec8b61ffaab3566e67691', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/prefix_override:/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages:/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'LC_NUMERIC': 'lzh_TW', 'LC_PAPER': 'lzh_TW', 'COLCON': '1', 'VTE_VERSION': '6003'}, 'shell': False}
+[0.708094] (-) TimerEvent: {}
+[0.809848] (-) TimerEvent: {}
+[0.910535] (-) TimerEvent: {}
+[0.946091] (leg_dector) StdoutLine: {'line': b'running egg_info\n'}
+[0.948899] (leg_dector) StdoutLine: {'line': b'writing ../../build/leg_dector/leg_dector.egg-info/PKG-INFO\n'}
+[0.949293] (leg_dector) StdoutLine: {'line': b'writing dependency_links to ../../build/leg_dector/leg_dector.egg-info/dependency_links.txt\n'}
+[0.950161] (leg_dector) StdoutLine: {'line': b'writing entry points to ../../build/leg_dector/leg_dector.egg-info/entry_points.txt\n'}
+[0.951162] (leg_dector) StdoutLine: {'line': b'writing requirements to ../../build/leg_dector/leg_dector.egg-info/requires.txt\n'}
+[0.952111] (leg_dector) StdoutLine: {'line': b'writing top-level names to ../../build/leg_dector/leg_dector.egg-info/top_level.txt\n'}
+[0.982137] (leg_dector) StdoutLine: {'line': b"reading manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'\n"}
+[0.983277] (leg_dector) StdoutLine: {'line': b"writing manifest file '../../build/leg_dector/leg_dector.egg-info/SOURCES.txt'\n"}
+[0.984283] (leg_dector) StdoutLine: {'line': b'running build\n'}
+[0.984721] (leg_dector) StdoutLine: {'line': b'running build_py\n'}
+[0.985366] (leg_dector) StdoutLine: {'line': b'copying leg_dector/go_back.py -> /home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/build/lib/leg_dector\n'}
+[0.986359] (leg_dector) StdoutLine: {'line': b'running install\n'}
+[0.987370] (leg_dector) StdoutLine: {'line': b'running install_lib\n'}
+[0.988611] (leg_dector) StdoutLine: {'line': b'copying /home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/build/lib/leg_dector/go_back.py -> /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector\n'}
+[0.990082] (leg_dector) StdoutLine: {'line': b'byte-compiling /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector/go_back.py to go_back.cpython-38.pyc\n'}
+[0.995727] (leg_dector) StdoutLine: {'line': b'running install_data\n'}
+[0.996249] (leg_dector) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.997650] (leg_dector) StdoutLine: {'line': b"removing '/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[1.013559] (-) TimerEvent: {}
+[1.013946] (leg_dector) StdoutLine: {'line': b'Copying ../../build/leg_dector/leg_dector.egg-info to /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector-0.0.0-py3.8.egg-info\n'}
+[1.018677] (leg_dector) StdoutLine: {'line': b'running install_scripts\n'}
+[1.037518] (leg_dector) StdoutLine: {'line': b'Installing go_back script to /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/leg_dector\n'}
+[1.039888] (leg_dector) StdoutLine: {'line': b'Installing human_following script to /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/leg_dector\n'}
+[1.041155] (leg_dector) StdoutLine: {'line': b'Installing leg_detection script to /home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/leg_dector\n'}
+[1.042691] (leg_dector) StdoutLine: {'line': b"writing list of installed files to '/home/airlab/Downloads/LiDAR_HumanFollowing-master/build/leg_dector/install.log'\n"}
+[1.077975] (leg_dector) CommandEnded: {'returncode': 0}
+[1.090338] (leg_dector) JobEnded: {'identifier': 'leg_dector', 'rc': 0}
+[1.091908] (-) EventReactorShutdown: {}

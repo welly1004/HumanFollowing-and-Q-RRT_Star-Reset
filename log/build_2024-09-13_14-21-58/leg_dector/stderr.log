@@ -1,0 +1,5 @@
+  File "/home/airlab/Downloads/LiDAR_HumanFollowing-master/install/leg_dector/lib/python3.8/site-packages/leg_dector/go_back.py", line 98
+    if self.map_data is not None and self.start is not None
+                                                                        ^
+SyntaxError: invalid syntax
+

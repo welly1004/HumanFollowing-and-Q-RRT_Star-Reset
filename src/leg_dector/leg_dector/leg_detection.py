@@ -7,6 +7,16 @@ import numpy as np
 from sklearn.cluster import DBSCAN
 from sklearn.decomposition import PCA
 from math import sqrt
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+from datetime import datetime
+import matplotlib.dates as mdates
+from nav_msgs.msg import Path
+from geometry_msgs.msg import PoseStamped
+from nav_msgs.msg import Odometry
+import tf_transformations
+from geometry_msgs.msg import Twist
+from std_msgs.msg import Bool
 
 class LegDetectionNode(Node):
     def __init__(self):
@@ -21,8 +31,127 @@ class LegDetectionNode(Node):
         self.front_arrow_publisher = self.create_publisher(Marker, '/robot_front_vector', 10) 
         self.distance_publisher = self.create_publisher(Marker, '/robot_to_leg_distance', 10) 
         self.cluster_marker_publisher = self.create_publisher(Marker, '/leg_marker', 10)
-
+        self.go_back_publisher = self.create_publisher(Bool, '/go_back', 10)
+        # self.start_end_publisher = self.create_publisher(Bool, '/start_end', 10)
+        self.start_position_publisher = self.create_publisher(PoseStamped, '/start_position', 10)
         self.shutdown_distance_threshold = 0.2  # 關閉節點的距離閾值
+
+
+        self.robot_trajectory_publisher = self.create_publisher(Path, '/robot_trajectory', 10)
+        self.odom_subscription = self.create_subscription(
+            Odometry,
+            '/odom',
+            self.odom_callback,
+            qos_profile=rclpy.qos.qos_profile_sensor_data)
+
+        self.robot_trajectory = Path()
+        self.robot_trajectory.header.frame_id = 'odom'  # Assuming odom as the global frame
+        
+        
+
+        self.path_pub = self.create_publisher(Path, '/target_path', 10)
+        self.path_msg = Path()
+        self.path_msg.header.frame_id = 'odom'
+
+        self.timer = self.create_timer(0.1, self.publish_path)  # 每100毫秒發布一次
+        
+        self.start_pose_published = False
+        # temp = Bool()
+        # temp.data = False
+        # self.go_back_publisher.publish(temp)
+        
+        # Initialize for plotting
+        # self.distances = []
+        # self.timestamps = []
+        # plt.style.use('seaborn-darkgrid')
+        # self.fig, self.ax = plt.subplots()
+        # # self.ani = FuncAnimation(self.fig, self.update_plot, interval=1000)
+        # plt.xlabel('Time')
+        # plt.ylabel('Distance (m)')
+        # plt.title('Real-time Distance to Leg')
+        # plt.ion()  # Enable interactive mode
+    def publish_start_end(self):
+        if len(self.robot_trajectory.poses) >= 2:
+            start_pose = self.robot_trajectory.poses[0].pose
+            end_pose = self.robot_trajectory.poses[-1].pose
+
+            # Log or print the start and end pose
+            self.get_logger().info(f"START: {start_pose}")
+            self.get_logger().info(f"END: {end_pose}")
+
+            # Publish the start and end pose as needed
+            # You could create a custom message or a standard message
+            start_end_msg = Bool()
+            start_end_msg.data = True  # This is just an example. Customize as needed.
+            self.start_end_publisher.publish(start_end_msg)
+    
+        self.start_pose_published = False
+    def odom_callback(self, msg):
+        self.current_robot_pose = msg.pose.pose
+        # print("Odometry received: ", self.current_robot_pose)
+         # 如果已檢測到目標，記錄當前的位姿並發布 START 位置
+        if hasattr(self, 'target_detected') and self.target_detected:
+            if not self.start_pose_published:  # 如果還沒有發布過
+                # 創建一個新的 PoseStamped 訊息來存儲當前位姿
+                start_pose = PoseStamped()
+                start_pose.header = msg.header
+                start_pose.pose = self.current_robot_pose
+                self.start_position_publisher.publish(start_pose)
+
+                # 設置標誌為 True，表示已經發布過一次
+                self.start_pose_published = True
+            
+        robot_pose = PoseStamped()
+        robot_pose.header = msg.header
+        robot_pose.pose = self.current_robot_pose
+        self.robot_trajectory.poses.append(robot_pose)
+        
+        self.robot_trajectory_publisher.publish(self.robot_trajectory)
+
+    def publish_path(self):
+        # if hasattr(self, 'target_position'):
+        #     print("target_position ok")
+        # if hasattr(self, 'current_robot_pose'):
+        #     print("current_robot_pose ok")
+        # 創建當前目標的位姿
+        if hasattr(self, 'target_position') and hasattr(self, 'current_robot_pose'):
+            x,y=self.target_position
+            # print(self.target_position)
+        else:
+            
+            return
+        pose = PoseStamped()
+        pose.header.stamp = self.get_clock().now().to_msg()
+        pose.header.frame_id = 'odom'
+        # pose.pose=self.current_robot_pose
+        rotation_matrix=tf_transformations.quaternion_matrix( [
+    self.current_robot_pose.orientation.x,
+    self.current_robot_pose.orientation.y,
+    self.current_robot_pose.orientation.z,
+    self.current_robot_pose.orientation.w
+])[:3, :3]
+        x,y,_=np.dot(  rotation_matrix,   [x,y,0.0]  )
+        x,y=np.dot(  [[0,-1],[1,0]],   [x,y]  )
+        x = x + self.current_robot_pose.position.x
+        y = y + self.current_robot_pose.position.y
+        
+        pose.pose.position.x = x
+        pose.pose.position.y = y
+        
+        pose.pose.position.z = 0.14
+        
+        #pose.pose.orientation =  self.current_robot_pose.orientation # 假設沒有旋轉
+
+        # print(str(pose.pose))
+        # print(str(self.current_robot_pose))
+        # 將位姿添加到Path訊息中
+        self.path_msg.poses.append(pose)
+        self.path_msg.header.stamp = self.get_clock().now().to_msg()
+
+        # 發布Path訊息
+        self.path_pub.publish(self.path_msg)
+
+        
         
 
     def scan_callback(self, msg):
@@ -49,9 +178,14 @@ class LegDetectionNode(Node):
 
             distance_to_target = self.calculate_distance([0, 0], self.target_position)
             if distance_to_target < self.shutdown_distance_threshold:
-                self.get_logger().warn('Distance to target is less than 20cm. Shutting down node.')
+                self.get_logger().warn('Distance to target is less than 20cm.')
+                # self.publish_start_end()  # Publish START and END
                 self.clear_all_markers(msg.header.frame_id)
-                rclpy.shutdown()  # 關閉ROS節點
+                temp = Bool()
+                temp.data = True
+                # self.start_position_publisher.publish(self.current_robot_pose)
+                self.go_back_publisher.publish(temp)
+                rclpy.shutdown()  # 关闭ROS节点
                 return
 
     def detect_leg_points(self, scan_msg):
@@ -91,6 +225,7 @@ class LegDetectionNode(Node):
                 self.points = self.points[valid_mask]
                 # clustering = DBSCAN(eps=0.1, min_samples=3).fit(self.points)  
                 cluster_mean = np.mean(self.points, axis=0)
+                self.target_odom=np.subtract(cluster_mean,self.target_position)
                 self.target_position = cluster_mean
             
             leg_points.append(self.target_position)
@@ -191,6 +326,11 @@ class LegDetectionNode(Node):
             distance = self.calculate_distance([0, 0], center_of_cluster)
             arrow_text_marker.text = '{:.2f}m'.format(distance)
             self.distance_publisher.publish(arrow_text_marker)
+
+            # Update distance data for plotting
+            # self.distances.append(distance)
+            # self.timestamps.append(datetime.now())
+            # self.update_plot(None)
     
     def calculate_distance(self, point1, point2):
         dx = point1[0] - point2[0]
@@ -216,6 +356,22 @@ class LegDetectionNode(Node):
             markers.append(marker_msg)
         return markers
     
+    # def update_plot(self, frame):
+    #     self.ax.clear()
+    #     self.ax.plot(self.timestamps, self.distances, label='Distance to Leg')
+    #     self.ax.set_xlabel('Time')
+    #     self.ax.set_ylabel('Distance (m)')
+    #     self.ax.set_title('Real-time Distance to Leg')
+    #     self.ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
+    #     plt.xticks(rotation=45)
+    #     plt.legend()
+    #     plt.draw()
+    #     plt.pause(0.001)  # Pause briefly to update the plot
+    
+    def spin(self):
+        rclpy.spin(self)
+        plt.show()
+
     def publish_front_arrow(self, frame_id):
         arrow_marker = Marker()
         arrow_marker.header.frame_id = frame_id
