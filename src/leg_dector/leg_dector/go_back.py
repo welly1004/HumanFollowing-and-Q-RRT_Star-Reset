@@ -695,7 +695,7 @@ class QRRTStar(Node):
             # goal = [15.0,19.0]
             path, result= self.rrt.rrt_planning(start=start,goal=goal,rect_list=rectangles,max_iter=1500)
             
-            self.path=path[1::-1]
+            self.path=path[::-1][1:]
             self.path=np.subtract(self.path,point_origin)
             self.path=np.flip(self.path,1)
             self.path=np.divide(self.path,10.0)
