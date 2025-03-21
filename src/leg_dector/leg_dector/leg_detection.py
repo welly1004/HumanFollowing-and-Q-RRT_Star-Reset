@@ -56,20 +56,7 @@ class LegDetectionNode(Node):
         self.timer = self.create_timer(0.1, self.publish_path)  # 每100毫秒發布一次
         
         self.start_pose_published = False
-        # temp = Bool()
-        # temp.data = False
-        # self.go_back_publisher.publish(temp)
-        
-        # Initialize for plotting
-        # self.distances = []
-        # self.timestamps = []
-        # plt.style.use('seaborn-darkgrid')
-        # self.fig, self.ax = plt.subplots()
-        # # self.ani = FuncAnimation(self.fig, self.update_plot, interval=1000)
-        # plt.xlabel('Time')
-        # plt.ylabel('Distance (m)')
-        # plt.title('Real-time Distance to Leg')
-        # plt.ion()  # Enable interactive mode
+
     def publish_start_end(self):
         if len(self.robot_trajectory.poses) >= 2:
             start_pose = self.robot_trajectory.poses[0].pose
@@ -185,7 +172,7 @@ class LegDetectionNode(Node):
                 temp.data = True
                 # self.start_position_publisher.publish(self.current_robot_pose)
                 self.go_back_publisher.publish(temp)
-                rclpy.shutdown()  # 关闭ROS节点
+                # rclpy.shutdown()  # 关闭ROS节点
                 return
 
     def detect_leg_points(self, scan_msg):
@@ -219,16 +206,36 @@ class LegDetectionNode(Node):
         
         
         if self.target_detected and clustering_successful:
-            # target_index = self.find_nearest_point_index(points, self.target_position)
-            valid_mask = np.linalg.norm(self.points - self.target_position,axis=1) < 0.15
-            if np.sum(valid_mask)!=0:
+            valid_mask = np.linalg.norm(self.points - self.target_position, axis=1) < 0.15
+            if np.sum(valid_mask) != 0:
                 self.points = self.points[valid_mask]
-                # clustering = DBSCAN(eps=0.1, min_samples=3).fit(self.points)  
-                cluster_mean = np.mean(self.points, axis=0)
-                self.target_odom=np.subtract(cluster_mean,self.target_position)
-                self.target_position = cluster_mean
+
+                
+                clustering = DBSCAN(eps=0.1, min_samples=3).fit(self.points)
+                labels = clustering.labels_
+
+                
+                unique_labels, counts = np.unique(labels, return_counts=True)
+
+               
+                max_cluster_size = 50  
+                valid_clusters = unique_labels[(counts > 3) & (counts < max_cluster_size)]
+
             
-            leg_points.append(self.target_position)
+                cluster_means = []
+                for label in valid_clusters:
+                    cluster_points = self.points[labels == label]
+                    cluster_mean = np.mean(cluster_points, axis=0)
+                    cluster_means.append(cluster_mean)
+
+                if len(cluster_means) > 0:
+                    
+                    cluster_means = np.array(cluster_means)
+                    nearest_idx = np.argmin(np.linalg.norm(cluster_means - self.target_position, axis=1))
+                    self.target_odom = np.subtract(cluster_means[nearest_idx], self.target_position)
+                    self.target_position = cluster_means[nearest_idx]
+                    
+                    leg_points.append(self.target_position)
 
         if clustering_successful and (not self.target_detected):   
         # else:
@@ -238,7 +245,7 @@ class LegDetectionNode(Node):
                     pca = PCA(n_components=1)
                     pca.fit(cluster)
                     variance_ratio = pca.explained_variance_ratio_[0]
-                    if variance_ratio < 0.95:
+                    if 0.89  <  variance_ratio < 0.91:
                         cluster_mean = np.mean(cluster, axis=0)
                         leg_points.append(cluster_mean)
                         if not self.target_detected:
@@ -248,14 +255,7 @@ class LegDetectionNode(Node):
         return leg_points if leg_points else []
 
     def cluster_around_target(self, scan_msg):
-        # ranges = np.array(scan_msg.ranges)
-        # angles = np.linspace(scan_msg.angle_min, scan_msg.angle_max, len(ranges))
-        # valid_mask = (ranges < 3.0)  # 僅考慮3米內的點
-        # ranges = ranges[valid_mask]
-        # angles = angles[valid_mask]
-        # xs = ranges * np.cos(angles)
-        # ys = ranges * np.sin(angles)
-        # points = np.column_stack((xs, ys))
+
         target_mask = np.linalg.norm(self.points - self.target_position, axis=1) < 0.15 
         cluster_points = self.points[target_mask]
         if len(cluster_points) > 0:
